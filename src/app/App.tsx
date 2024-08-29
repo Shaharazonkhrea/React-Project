@@ -1,7 +1,7 @@
-import { useState } from 'react';
-import CakeBuilder from './CakeBuilder';
-import Cake from './Cake'
-import { Layer } from './Layer'
+import CakeBuilder from '../CakeBuilder/CakeBuilder';
+import Cake from '../Cake/Cake';
+
+import './App.css'
 
 function App() {
   const [layers, setLayers] = useState<Layer[]>([]);
@@ -11,7 +11,7 @@ function App() {
   };
 
   const deleteLayer = (index: number) => {
-    const newLayers = layers.filter((_, i) => i !== index);
+    const newLayer = layers.filter((_, i) => i !== index);
     setLayers(newLayers);
   };
 
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
