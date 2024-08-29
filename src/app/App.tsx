@@ -7,7 +7,7 @@ import Cake from '../Cake/Cake';
 const App = () => {
   const [layers, setLayers] = useState<Layer[]>([])
   const addLayer = (newLayer: Layer) => {
-    setLayers([...layers, newLayer]);
+    setLayers([newLayer, ...layers]);
   };
   const deleteLayer = (index: number) => {
     const newLayers = layers.filter((_, i) => i !== index);
