@@ -1,10 +1,9 @@
 import React from "react";
 import { Layer } from "../interfaces/interfaces";
-import '../css/cakeBuilder.css';
 
 interface LayerBuilderProps {
   layers: Layer[];
-  setLayers: React.Dispatch<React.SetStateAction<Layer[]>>;
+  setLayers: (layers: Layer[]) => void;
   removeLayer:(index:number) => void
 }
 

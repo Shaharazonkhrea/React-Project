@@ -4,5 +4,3 @@ export interface Layer {
     color: string
     id: number
 }
-
-

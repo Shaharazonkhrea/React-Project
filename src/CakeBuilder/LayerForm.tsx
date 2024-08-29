@@ -3,31 +3,34 @@ import { Layer } from "../interfaces/interfaces";
 
 
 interface LayerFormProps {
-    onAddLayer: (layer:Layer) => void; 
-    onDisplay: (isVisible:boolean) => void; 
+    onAddLayer: (layer: Layer) => void; 
+    onDisplay: (isVisible: boolean) => void; 
     cakeLayers: Layer[];
 }
+
+const idMaker = () => {
+    let id = 0
+    return () => id++
+}
+const makeId = idMaker()
 
 export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps ) {
     const [width, setWidth] = useState<number>(0); 
     const [height, setHeight] = useState<number>(0); 
-    const [color, setColor] = useState<string>('');
-    const [id, setId] = useState<number>(0) 
+    const [color, setColor] = useState<string>('#000000');
 
     function handleSubmit(e:FormEvent){
         e.preventDefault(); 
-
         let widthOfPreviousLayer = topMostLayerWidth(); 
 
         if (!cakeLayers || width <= widthOfPreviousLayer){
-            onAddLayer({width: width, height: height, color: color, id: id});
-        }else {
+            onAddLayer({width: width, height: height, color: color, id: makeId()});
+        } else {
             alert('Please choose width greater than layer underneath')
         }
         setWidth(0); 
         setHeight(0); 
         setColor('');
-        setId(0)
         onDisplay(false); 
     }
     
@@ -50,15 +53,15 @@ export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps )
                     </div>
                     <div className="Inputs">
                         <label htmlFor="color">Color   </label>
-                        <input id="color" type="color" onChange={(e) => {setColor(e.target.value)}} />
-                    </div>
-                    <div className="Inputs">
-                        <label htmlFor="id">Id</label>
+                        <input id="color" type="color" onChange={(e) => {
+                            console.log(e.target.value)
+                            setColor(e.target.value)
+                        }} />
                     </div>
                 </div>
                 <div className="FormButtons">
                     <button className="FormButton" type="submit">Submit</button>
-                    <button className="FormButton" onClick={() => onDisplay(false)}>Delete</button>
+                    <button className="FormButton" onClick={() => onDisplay(false)}>Cancel</button>
                 </div>
             </form>
 

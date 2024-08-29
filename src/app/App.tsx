@@ -1,11 +1,23 @@
-import { CombinedBuild } from '../CakeBuilder/CombinedBuild';
+import CakeBuilder from '../CakeBuilder/CakeBuilder';
 import './App.css'
+import { useState } from 'react';
+import { Layer } from '../interfaces/interfaces';
+import Cake from '../Cake/Cake';
 
-function App() {
+const App = () => {
+  const [layers, setLayers] = useState<Layer[]>([])
+  const addLayer = (newLayer: Layer) => {
+    setLayers([...layers, newLayer]);
+  };
+  const deleteLayer = (index: number) => {
+    const newLayers = layers.filter((_, i) => i !== index);
+    setLayers(newLayers);
+  };
   return (
     <div>
       <h1>Cake Builder</h1>
-      <CombinedBuild />
+      <CakeBuilder layers={layers} addLayer={addLayer} deleteLayer={deleteLayer} setLayers={setLayers} />
+      <Cake layers={layers} />
     </div>
   );
 }
