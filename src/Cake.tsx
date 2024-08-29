@@ -1,5 +1,3 @@
-// src/components/Cake.tsx
-
 import { FC } from 'react';
 import { Layer } from './Layer';
 
