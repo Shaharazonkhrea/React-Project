@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import { Layer } from './Layer';
-import Cake from './Cake';
+import { Layer } from '../interfaces/interfaces';
+import Cake from '../Cake/Cake';
 
 const CakeBuilder: FC = () => {
   const [layers, setLayers] = useState<Layer[]>([]);
@@ -9,7 +9,8 @@ const CakeBuilder: FC = () => {
     const newLayer: Layer = {
       height: 3, 
       width: 6,  
-      color: 'blue', 
+      color: 'blue',
+      id: 0 
     };
     setLayers([...layers, newLayer]);
   };

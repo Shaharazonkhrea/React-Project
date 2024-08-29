@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import CakeBuilder from '../CakeBuilder/CakeBuilder';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    </>
-  )
+    <div>
+      <h1>Cake Builder</h1>
+      <CakeBuilder />
+    </div>
+  );
 }
 
 export default App

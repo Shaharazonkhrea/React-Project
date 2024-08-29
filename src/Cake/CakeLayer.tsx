@@ -1,4 +1,4 @@
-import "./src/styles/CakeLayer.css"
+import "../styles/CakeLayer.css"
 import { Layer } from '../interfaces/interfaces'
 import { FC } from 'react'
 
