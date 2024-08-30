@@ -1,5 +1,6 @@
 import React from "react";
 import { Layer } from "../interfaces/interfaces";
+import '../styles/LayerBuilder.css'
 
 interface LayerBuilderProps {
   layers: Layer[];
@@ -28,9 +29,9 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
   };
 
   return (
-    <div className="LayerInfo">
+    <div className="LayerBuilder">
       {layers.map((layer, index) => (
-        <div key={layer.id || index} className="layer-info">
+        <div key={layer.id || index} className="layer-builder">
           <div className="layer-edit">
             <p className="LayerLabel">Layer {index + 1} </p>
             <label className="LabelBlue">
@@ -38,7 +39,7 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
               <input
                 type="range"
                 min="1"
-                max="100"
+                max="25"
                 value={layer.width}
                 onChange={(e) =>
                   updateLayer(index, {
@@ -52,8 +53,8 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
               Height ({layer.height}in)
               <input
                 type="range"
-                min="5"
-                max="200"
+                min="3"
+                max="6"
                 value={layer.height}
                 onChange={(e) =>
                   updateLayer(index, {
