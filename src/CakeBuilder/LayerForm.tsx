@@ -8,11 +8,7 @@ interface LayerFormProps {
     cakeLayers: Layer[];
 }
 
-const idMaker = () => {
-    let id = 0
-    return () => id++
-}
-const makeId = idMaker()
+const makeId = () => Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
 
 export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps ) {
     const [width, setWidth] = useState<number>(0); 
@@ -54,7 +50,6 @@ export function LayerForm ({onAddLayer, onDisplay, cakeLayers}: LayerFormProps )
                     <div className="Inputs">
                         <label htmlFor="color">Color   </label>
                         <input id="color" type="color" onChange={(e) => {
-                            console.log(e.target.value)
                             setColor(e.target.value)
                         }} />
                     </div>

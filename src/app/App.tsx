@@ -14,7 +14,7 @@ const App = () => {
     setLayers(newLayers);
   };
   return (
-    <div>
+    <div className="app-container">
       <h1>Cake Builder</h1>
       <CakeBuilder layers={layers} addLayer={addLayer} deleteLayer={deleteLayer} setLayers={setLayers} />
       <Cake layers={layers} />
