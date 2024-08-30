@@ -1,0 +1,17 @@
+.cake {
+    height: 800px;
+    width: 80%;
+    border: 5px solid navy;
+    border-radius: 10px;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+@media screen and (min-width: 1000px) {
+    .cake {
+        float: right;
+    }
+} 

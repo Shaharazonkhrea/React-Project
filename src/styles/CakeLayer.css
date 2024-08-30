@@ -1,0 +1,13 @@
+.cake-layer {
+    position: relative;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
+.topper {
+    border-radius: 50%;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+}
