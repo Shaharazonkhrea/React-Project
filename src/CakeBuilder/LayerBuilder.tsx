@@ -52,7 +52,7 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
               Height ({layer.height}in)
               <input
                 type="range"
-                min="20"
+                min="5"
                 max="200"
                 value={layer.height}
                 onChange={(e) =>
