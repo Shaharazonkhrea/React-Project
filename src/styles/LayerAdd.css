@@ -1,0 +1,14 @@
+.LayerAdd {
+    border: 5px solid navy;
+ }
+
+  @media screen and (min-width: 420px) {
+    h1 {
+      font-size: 20px
+    }
+
+    .cake {
+        float: right;
+    }
+    
+} 
