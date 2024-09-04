@@ -39,7 +39,7 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
               <input
                 type="range"
                 min="1"
-                max="25"
+                max="20"
                 value={layer.width}
                 onChange={(e) =>
                   updateLayer(index, {
@@ -53,8 +53,8 @@ const LayerBuilder: React.FunctionComponent<LayerBuilderProps> = ({
               Height ({layer.height}in)
               <input
                 type="range"
-                min="3"
-                max="6"
+                min="1"
+                max="5"
                 value={layer.height}
                 onChange={(e) =>
                   updateLayer(index, {
