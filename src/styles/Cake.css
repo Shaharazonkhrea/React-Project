@@ -1,17 +1,18 @@
 .cake {
-    height: 800px;
+    height: 600px;
     width: 80%;
     border: 5px solid navy;
     border-radius: 10px;
-    background-color: burlywood;
+    background: repeating-linear-gradient(45deg, #95ce05, #b2f841 100px, #a9b04d 200px);
+        padding: 40px 10px;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     margin: 10px auto;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 420px) {
     .cake {
-        float: right;
+        float: center;
     }
 } 

@@ -1,5 +1,6 @@
 import { FormEvent, useState } from "react";
 import { Layer } from "../interfaces/interfaces";
+import '../styles/LayerForm.css';
 
 
 interface LayerFormProps {

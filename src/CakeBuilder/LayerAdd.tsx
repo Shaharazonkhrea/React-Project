@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Layer } from "../interfaces/interfaces"
 import { LayerForm } from "./LayerForm"
+import '../styles/LayerAdd.css'
 
 interface LayerAddProps {
     addLayer: (layer: Layer) => void
